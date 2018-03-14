@@ -207,7 +207,7 @@ void GPIO_Init(void) {
 	GPIOD->OTYPER = 0;
 	GPIOD->PUPDR = 0;
 
-	// Now, lock GPIOE configuration
+	// Now, lock GPIOD configuration
 	GPIOD->LCKR = (LED_LD5_R | LED_LD4_G | LED_LD6_B | LED_LD3_O | LED_LD8_R | LCKK);
 	GPIOD->LCKR = (LED_LD5_R | LED_LD4_G | LED_LD6_B | LED_LD3_O | LED_LD8_R);
 	GPIOD->LCKR = (LED_LD5_R | LED_LD4_G | LED_LD6_B | LED_LD3_O | LED_LD8_R | LCKK);
@@ -216,32 +216,17 @@ void GPIO_Init(void) {
 
 // Discovery STM32F4
 // For the LCD in 8-bit mode, we use PE5-15
-// PE3   Free I/O
-// PE4   Free I/O
-// PE5   Free I/O - HD44780 E
-// PE6   Free I/O - HD44780 RS
-// PE7   Free I/O - HD44780 RW
-// PE8   Free I/O - HD44780 D0
-// PE9   Free I/O - HD44780 D1
-// PE10  Free I/O - HD44780 D2
-// PE11  Free I/O - HD44780 D3
-// PE12  Free I/O - HD44780 D4
-// PE13  Free I/O - HD44780 D5
-// PE14  Free I/O - HD44780 D6
-// PE15  Free I/O - HD44780 D7
-
 // PORTE
 // 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1  0
 // D7 D6 D5 D4 D3 D2 D1 D0 RW RS  E
 // 01 01 01 01 01 01 01 01 01 01 01 00 00 00 00 00
 //   5     5     5     5     5     4     0     0
-// 0x55555400
-	GPIOE->MODER = 0x55555400; 	// 01010101 01010101 01010100 00000000
+	GPIOE->MODER = 0x55555400;
 	GPIOE->OSPEEDR = 0;
 	GPIOE->OTYPER = 0;
 	GPIOE->PUPDR = 0;
 
-    // Now, lock GPIOD configuration
+    // Now, lock GPIOE configuration
 	// 0xffe0 11111111 11100000
 	GPIOE->LCKR = 0xffe0 | LCKK;
 	GPIOE->LCKR = 0xffe0;
