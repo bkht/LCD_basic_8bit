@@ -5,6 +5,9 @@
 // Newhaven 4x20 character OLED (green)
 // NHD-0420DZW-AG5_Character_OLED_Display_Module
 // Note, command delays according to datasheet (600uS, 2mS)
+// PORTE
+// 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1  0
+// D7 D6 D5 D4 D3 D2 D1 D0 RW RS  E
 
 #define LED_LD8_R (1U<<5)
 #define LED_LD4_G (1U<<12)
